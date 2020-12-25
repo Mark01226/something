@@ -7,7 +7,15 @@
 
 ---
 
-<img src="JDBC.assets/1555575941569.png" alt="1555575941569" style="zoom:67%;" />
+<img src="./JDBC.assets/1555575941569.png" alt="1555575941569" style="zoom:67%;" />
+
+JDBC连接的整个过程大概分为:
+
+* 使用JDBC编程需要连接的数据库，注册驱动和数据库信息。
+* 操作**Connection**,打开**Statement**对象。
+* 通过**Statement**执行SQL，返回结果到**ResultSet**对象。
+* 使用**ResultSet**读取数据，然后通过代码转化为具体的**POJO**对象。
+* 关闭数据库相关资源。
 
 ### 数据库连接方式
 
@@ -144,7 +152,6 @@
 
              */
 
-
             //3.获取连接
             Connection conn = DriverManager.getConnection(url, user, password);
             System.out.println(conn);
@@ -179,8 +186,13 @@
         //4.获取连接
         Connection conn = DriverManager.getConnection(url,user,password);
         System.out.println(conn);
-
     }
+/*
+	1.加载配置文件
+	2.读取配置信息
+	3.加载驱动
+	4.获取连接
+*/
 ```
 
 其中，配置文件声明在工程的src目录下：[jdbc.properties]
